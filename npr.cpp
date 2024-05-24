@@ -55,13 +55,13 @@ public:
 
     bool Winner() {
         if(score2 == 10) {
-            DrawText("Your Win!", GetScreenWidth()/2 + 50, GetScreenHeight()/2, 60, PINK);
+            DrawText("You Win!", GetScreenWidth()/2 + GetScreenWidth()/4 - 220, GetScreenHeight()/4, 120, PINK);
             speed_x = 0;
             speed_y = 0;
             return true;
         }
         else if( score1 == 10) {
-            DrawText("You Win!",  50, GetScreenHeight()/2, 60, PINK);
+            DrawText("You Win!",  GetScreenWidth() / 4 - 220, GetScreenHeight()/4, 120, PINK);
             speed_x = 0;
             speed_y = 0;
             return true;
@@ -71,6 +71,9 @@ public:
     void ResetBall() {
         x = GetScreenWidth() / 2;
         y = GetScreenHeight() / 2;
+
+        speed_x = 8;
+        speed_y = 8;
 
         int speed_choices[2] = {-1,1};
         speed_x *= speed_choices[GetRandomValue(0,1)];
